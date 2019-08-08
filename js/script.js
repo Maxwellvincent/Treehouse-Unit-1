@@ -15,24 +15,24 @@ project 1 - A Random Quote Generator
   Use console.log() to log your array of quotes to the console.
 ***/
 var quotes = [
-  {quote: " Hi beautiful",
-  source: "damien"
+  {quote: " You miss 100% of the shots you don’t take. ",
+  source: "Wayne Gretzky"
   },
-  {quote: "you are awesome",
-  source: "chris"
+  {quote: "I've missed more than 9000 shots in my career. I've lost almost 300 games. 26 times I've been trusted to take the game winning shot and missed. I've failed over and over and over again in my life. And that is why I succeed. ",
+  source: "Michael Jordan"
   },
-  {quote: "Be mine",
-  source: "mathew",
-  citation: "23"
+  {quote: "I do not feel obliged to believe that the same God who has endowed us with sense, reason, and intellect has intended us to forgo their use.",
+  source: "Galileo Galilei",
+  year: "(1564-1642)"
   },
-  {quote: "this will do",
-  source: "adam",
-  citation: "23"
+  {quote: "Do, or do not. There is no 'try'.",
+  source: "Yoda",
+  citation: "('The Empire Strikes Back')"
   },
-  {quote: "marry me",
-  source: "John",
-  citation: "23",
-  year: "12"
+  {quote: "The full use of your powers along lines of excellence.",
+  source: "by John F. Kennedy",
+  citation: "definition of 'happiness'",
+  year: "(1917-1963)"
   }
 ]
 
@@ -70,10 +70,10 @@ function printQuote () {
   var emptyString = "<p class=\"quote\"> " + verb.quote + " </p> <p class=\"source\">" + verb.source +" "
 
   if(verb.citation){
-    emptyString += "<span class=\"citation\"> " + " </span>"
+    emptyString += "<span class=\"citation\"> " + verb.citation + " </span>"
   } 
   if(verb.year) {
-    emptyString += "<span class=\"year\"> " + " </span>"
+    emptyString += "<span class=\"year\"> " + verb.year + " </span>"
   } 
   emptyString += "</p>"
   document.getElementById("quote-box").innerHTML = emptyString;
