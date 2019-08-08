@@ -69,20 +69,12 @@ function printQuote () {
   var verb = getRandomQuote();
   var emptyString = "<p class=\"quote\"> " + verb.quote + " </p> <p class=\"source\">" + verb.source +" "
 
-  if(verb.citation === ""){
-    emptyString += + "<span class=\"citation\"> " + " </span>"
+  if(verb.citation){
+    emptyString += "<span class=\"citation\"> " + " </span>"
   } 
-  else {
-    emptyString += "<span class=\"citation\"> "+" "+ verb.citation +"</span>"
-  }
-
-  if(verb.year === "") {
+  if(verb.year) {
     emptyString += "<span class=\"year\"> " + " </span>"
   } 
-  else {
-    emptyString += "<span class=\"year\"> " +" "+ verb.year + "</span>"
-  }
-
   emptyString += "</p>"
   document.getElementById("quote-box").innerHTML = emptyString;
 }
