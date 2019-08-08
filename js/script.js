@@ -14,9 +14,30 @@ project 1 - A Random Quote Generator
   Add the `year` property to at least one object in the array.
   Use console.log() to log your array of quotes to the console.
 ***/
+var quotes = [
+  {quote: " Hi beautiful",
+  source: "damien",
+  },
+  {quote: "you are awesome",
+  source: " chris"
+  },
+  {quote: "Be mine",
+  source: " mathew",
+  citation: ""
+  },
+  {quote: "this will do",
+  source: " adam ",
+  citation: "",
+  year: ""
+  },
+  {quote: "marry me",
+  source: " John ",
+  citation: "",
+  year: ""
+  }
+]
 
-
-
+console.log(quotes);
 
 /***
   Create the `getRandomQuote` function to:
@@ -24,6 +45,11 @@ project 1 - A Random Quote Generator
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
 
+function getRandomQuote () {
+  // Has to be the number 4 as we are using 5 objects within our aray ranging from 0-4
+  var num = Math.ceil( Math.random() * 4);
+  return quotes[num];
+}
 
 
 
@@ -40,6 +66,14 @@ project 1 - A Random Quote Generator
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
 
+function printQuote () {
+  var callFunction = getRandomQuote();
+  // need to find out why i am unable to call function, need to concat
+  var emptyString = "<p class= \"quote\"> callFunction </p>"
+                    "<p class= \"source \"> "<"span class= \"citation \"> </span> <span class= \"year\"> </span> </p>";
+
+  document.getElementById("quote-box").innerHTML = emptyString;
+}
 
 
 
