@@ -16,24 +16,24 @@ project 1 - A Random Quote Generator
 ***/
 var quotes = [
   {quote: " Hi beautiful",
-  source: "damien",
+  source: "damien"
   },
   {quote: "you are awesome",
-  source: " chris"
+  source: "chris"
   },
   {quote: "Be mine",
-  source: " mathew",
-  citation: ""
+  source: "mathew",
+  citation: "23"
   },
   {quote: "this will do",
-  source: " adam ",
-  citation: "",
-  year: ""
+  source: "adam",
+  citation: "23",
+  year: "12"
   },
   {quote: "marry me",
-  source: " John ",
-  citation: "",
-  year: ""
+  source: "John",
+  citation: "23",
+  year: "12"
   }
 ]
 
@@ -67,11 +67,24 @@ function getRandomQuote () {
 ***/
 
 function printQuote () {
-  var callFunction = getRandomQuote();
-  // need to find out why i am unable to call function, need to concat
-  var emptyString = "<p class= \"quote\"> callFunction </p>"
-                    "<p class= \"source \"> "<"span class= \"citation \"> </span> <span class= \"year\"> </span> </p>";
+  var verb = getRandomQuote();
+  var emptyString = "<p class=\"quote\"> " + verb.quote + "</p><p class=\"source\">" + verb.source +" "
 
+  if(verb.citation != ""){
+    emptyString += + "<span class=\"citation\"> "+" "+ verb.citation +"</span>"
+  } 
+  // else {
+  //   emptyString += + "<span class=\"citation\"> "+" "+ "" +"</span>"
+  // }
+
+  if(verb.year != "") {
+    emptyString += "<span class=\"year\"> " +" "+ verb.year + "</span>"
+  } 
+  // else {
+  //   emptyString += "<span class=\"year\"> " +" "+ " " + "</span>"
+  // }
+
+  emptyString += "</p>"
   document.getElementById("quote-box").innerHTML = emptyString;
 }
 
