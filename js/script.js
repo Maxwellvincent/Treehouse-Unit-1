@@ -19,7 +19,8 @@ var quotes = [
   source: "Wayne Gretzky"
   },
   {quote: "I've missed more than 9000 shots in my career. I've lost almost 300 games. 26 times I've been trusted to take the game winning shot and missed. I've failed over and over and over again in my life. And that is why I succeed. ",
-  source: "Michael Jordan"
+  source: "Michael Jordan",
+  tags: ["[Inspirational]","[Uplifting]","[Courageous]"]
   },
   {quote: "I do not feel obliged to believe that the same God who has endowed us with sense, reason, and intellect has intended us to forgo their use.",
   source: "Galileo Galilei",
@@ -74,12 +75,33 @@ function printQuote () {
   } 
   if(verb.year) {
     emptyString += "<span class=\"year\"> " + verb.year + " </span>"
+  }
+  if(verb.tags) {
+    emptyString += "<span class=\"categorization\"> " + verb.tags + " </span>"
   } 
   emptyString += "</p>"
   document.getElementById("quote-box").innerHTML = emptyString;
+
 }
 
+// Code was obtained from StackOverflow, to produce a random assortment of colors.
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
+function setRandomColor() {
+  var y = getRandomColor()
+  var x = document.getElementsByTagName("body")[0];
+  x.style.backgroundColor = y;
+}
+
+var intervalTimer = window.setInterval(printQuote, 10000);
+var intervalTimer = window.setInterval(setRandomColor, 10000);
 
 /***
   When the "Show another quote" button is clicked, the event listener 
@@ -89,6 +111,6 @@ function printQuote () {
 ***/
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
+document.getElementById('loadQuote').addEventListener("click", setRandomColor);
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
